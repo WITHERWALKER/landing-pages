@@ -1,0 +1,120 @@
+---
+import { navigationLinks, phoneLink } from "@/data/site";
+
+import { Menu, Phone } from "@lucide/astro";
+---
+
+<nav
+  id="site-header"
+  class="group fixed top-6 inset-x-4 z-50 rounded-3xl transition-all duration-500"
+>
+  <div
+    class="mx-auto px-6 md:px-10 sm:max-w-400 py-5 md:py-7 flex items-center justify-between transition-all duration-500 group-[.is-scrolled]:py-3 md:group-[.is-scrolled]:py-3"
+  >
+    <a
+      href="#hero"
+      class="text-4xl font-bold text-white tracking-tight transition-all duration-500 group-[.is-scrolled]:text-2xl"
+      aria-label="SmileCare Dental - Inicio"
+    >
+      Smile&bull;Care
+    </a>
+
+    <ul
+      class="hidden md:flex items-center gap-2 bg-white/20 border border-white/20 backdrop-blur-lg rounded-full px-8 py-3 transition-all duration-500 group-[.is-scrolled]:px-5 group-[.is-scrolled]:py-1.5"
+    >
+      {
+        navigationLinks.map((link, index) => (
+          <li>
+            <a
+              href={link.href}
+              class="text-base font-medium text-white/70 transition-all duration-500 hover:text-white group-[.is-scrolled]:text-sm aria-[current=page]:rounded-full aria-[current=page]:bg-white aria-[current=page]:px-4 aria-[current=page]:py-1.5 aria-[current=page]:font-semibold aria-[current=page]:text-dark"
+              data-nav-link
+              aria-current={index === 0 ? "page" : undefined}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <a
+      href={phoneLink.href}
+      class="hidden md:inline-flex items-center gap-2 bg-white text-dark text-base font-semibold px-6.5 py-2.5 rounded-full hover:bg-white/90 transition-all duration-500 group-[.is-scrolled]:px-4 group-[.is-scrolled]:py-2 group-[.is-scrolled]:text-sm"
+      aria-label={phoneLink.label}
+    >
+      Llamar ahora
+    </a>
+
+    <button
+      id="mobile-menu-button"
+      class="md:hidden text-white p-2"
+      aria-label="Abrir o cerrar el menú"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <Menu />
+    </button>
+  </div>
+
+  <aside
+    id="mobile-menu"
+    class="hidden md:hidden bg-white rounded-2xl mt-2 shadow-xl"
+    aria-label="Navegación móvil"
+  >
+    <nav>
+      <ul class="p-6 flex flex-col gap-4">
+        {
+          navigationLinks.map((link, index) => (
+            <li>
+              <a
+                href={link.href}
+                class:list={[
+                  "block py-2 text-sm font-medium aria-[current=page]:font-bold aria-[current=page]:text-dark",
+                  index === navigationLinks.length - 1
+                    ? "text-muted"
+                    : "border-b border-gray-100",
+                  index === 0 ? "text-dark" : "text-muted",
+                ]}
+                data-nav-link
+              >
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+        <li>
+          <a
+            href={phoneLink.href}
+            class="flex items-center justify-center gap-2 bg-dark text-white text-sm font-medium px-4 py-3 rounded-full mt-2"
+          >
+            <Phone />
+            Llamar ahora
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+</nav>
+
+<style>
+  #site-header.is-scrolled {
+    top: 0.75rem;
+    border-radius: 1rem;
+    background: black;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+  @media (min-width: 768px) {
+    #site-header.is-scrolled {
+      left: 2%;
+      right: 2%;
+    }
+  }
+  @media (min-width: 1024px) {
+    #site-header.is-scrolled {
+      left: 24%;
+      right: 24%;
+    }
+  }
+</style>

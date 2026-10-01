@@ -1,0 +1,42 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+import Footer from "@/components/layout/Footer.astro";
+
+import Header from "@/components/sections/Header.astro";
+import About from "@/components/sections/About.astro";
+import Consultations from "@/components/sections/Consultations.astro";
+import Insights from "@/components/sections/Insights.astro";
+import Services from "@/components/sections/Services.astro";
+import Testimonials from "@/components/sections/Testimonials.astro";
+import Works from "@/components/sections/Works.astro";
+import { homePageSeo } from "@/lib/seo";
+import "@/styles/global.css";
+
+const canonicalURL = Astro.url;
+---
+
+<Layout
+  title={homePageSeo.title}
+  description={homePageSeo.description}
+  canonicalURL={canonicalURL}
+>
+  <a
+    href="#main-content"
+    class="absolute left-1/2 -top-full z-100 -translate-x-1/2 rounded-b-lg bg-dark px-6 py-3 text-sm font-medium text-white transition-[top] duration-300 focus:top-0"
+    >Saltar al contenido principal</a
+  >
+
+  <Header />
+
+  <main id="main-content">
+    <About />
+    <Services />
+    <Works />
+    <Consultations />
+    <Testimonials />
+    <Insights />
+  </main>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,53 @@
+---
+import CTAButton from "@/components/ui/CTAButton.astro";
+import { Image } from "astro:assets";
+import { heroContent } from "@/data/site";
+import Navbar from "@/components/layout/Navbar.astro";
+---
+
+<header class="m-4 relative">
+  <Navbar />
+
+  <section
+    id="hero"
+    class="relative min-h-screen flex items-center overflow-hidden"
+  >
+    <div class="absolute inset-0 rounded-4xl">
+      <Image
+        src={heroContent.image.src}
+        alt={heroContent.image.alt}
+        class="w-full h-full object-cover rounded-4xl"
+        widths={[768, 1280, 1920]}
+        sizes="100vw"
+        fetchpriority="high"
+        data-hero-image
+      />
+
+      <div
+        class="absolute inset-0 bg-linear-to-r from-black/60 via-black/30 to-transparent rounded-4xl"
+        aria-hidden="true"
+      >
+      </div>
+    </div>
+
+    <div
+      class="relative z-10 mx-auto px-6 md:px-10 sm:max-w-400 w-full pt-24"
+      data-hero-reveal
+    >
+      <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4">
+        Cuidado Dental <br /> Sin Estrés
+      </h1>
+
+      <p
+        class="text-pretty text-neutral-400 text-sm md:text-base mb-8 leading-relaxed"
+      >
+        Ya sea una revisión de rutina o una emergencia dental,<br
+          class="hidden md:block"
+        />
+        nuestros profesionales experimentados están a solo una llamada de distancia.
+      </p>
+
+      <CTAButton href="#services" variant="light"> Reservar Cita </CTAButton>
+    </div>
+  </section>
+</header>

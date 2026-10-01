@@ -1,0 +1,83 @@
+---
+import CTAButton from "@/components/ui/CTAButton.astro";
+import SectionEyebrow from "@/components/ui/SectionEyebrow.astro";
+import { Image } from "astro:assets";
+import { aboutContent } from "@/data/site";
+---
+
+<section
+  id="about"
+  class="py-16 md:py-26 bg-cream"
+  aria-labelledby="about-heading"
+>
+  <div
+    class="flex flex-col mx-auto px-6 md:px-10 sm:max-w-400 md:flex-row items-center gap-8 md:gap-12"
+  >
+    <figure class="w-full md:w-1/4" data-animate="fade-up">
+      <Image
+        src={aboutContent.leftImage.src}
+        alt={aboutContent.leftImage.alt}
+        class="w-full rounded-2xl object-cover aspect-square"
+        width={600}
+        height={600}
+        loading="lazy"
+        decoding="async"
+      />
+    </figure>
+
+    <article class="w-full md:w-1/2 text-center" data-animate="fade-up">
+      <SectionEyebrow label="Sobre nosotros" className="justify-center" />
+
+      <h2
+        id="about-heading"
+        class="text-3xl md:text-5xl font-bold tracking-tight text-balance mt-2 mb-4"
+      >
+        Una Forma de Ahorrar <br /> en tu Cuidado Dental
+      </h2>
+
+      <p
+        class="text-muted text-base md:text-lg leading-relaxed mb-6 max-w-xl text-pretty mx-auto"
+      >
+        Nuestro equipo de profesionales experimentados crea un ambiente cómodo y
+        acogedor para cada paciente. Ofrecemos una amplia variedad de servicios
+        dentales de calidad.
+      </p>
+
+      <CTAButton href="#services">Reservar Cita</CTAButton>
+
+      <figure class="mt-8">
+        <Image
+          src={aboutContent.bottomImage.src}
+          alt={aboutContent.bottomImage.alt}
+          class="w-full max-w-xs mx-auto rounded-2xl object-cover aspect-video"
+          width={400}
+          height={225}
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+    </article>
+
+    <aside class="w-full md:w-1/4 flex flex-col gap-6" data-animate="fade-up">
+      <figure>
+        <Image
+          src={aboutContent.rightImage.src}
+          alt={aboutContent.rightImage.alt}
+          class="w-full rounded-2xl object-cover aspect-3/4"
+          width={400}
+          height={533}
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+
+      <figure>
+        <figcaption class="text-6xl font-bold text-dark">98%</figcaption>
+
+        <p class="text-base text-pretty text-muted mt-1">
+          Clientes satisfechos con nuestros servicios
+        </p>
+      </figure>
+    </aside>
+  </div>
+</section>

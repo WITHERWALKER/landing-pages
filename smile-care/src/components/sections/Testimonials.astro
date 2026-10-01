@@ -1,0 +1,120 @@
+---
+import { testimonials } from "@/data/site";
+import { Image } from "astro:assets";
+import { ArrowLeft, ArrowRight, Star } from "@lucide/astro";
+---
+
+<section
+  id="testimonials"
+  class="py-16 md:py-24 bg-soft-blue rounded-4xl mx-4"
+  aria-labelledby="testimonials-heading"
+>
+  <div class="mx-auto px-6 md:px-10 sm:max-w-400">
+    <header
+      class="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-4"
+    >
+      <div data-animate="fade-up" class="flex flex-col gap-4">
+        <h2
+          id="testimonials-heading"
+          class="text-3xl md:text-5xl font-bold tracking-tight text-balance"
+        >
+          Pacientes que ya sonríen
+        </h2>
+
+        <p
+          class="text-base md:text-lg max-w-xl text-pretty font-medium text-neutral-600 leading-relaxed"
+        >
+          Historias reales de quienes ya confiaron su sonrisa a SmileCare.
+        </p>
+      </div>
+
+      <nav
+        class="flex items-center gap-3"
+        aria-label="Navegación de testimonios"
+        data-animate="fade-up"
+      >
+        <button
+          type="button"
+          data-carousel-prev
+          data-carousel-target="testimonial-track"
+          class="size-16 rounded-full bg-white flex cursor-pointer items-center justify-center hover:bg-white/80 transition-colors shadow-sm disabled:opacity-40 disabled:cursor-not-allowed"
+          aria-label="Testimonio anterior"
+        >
+          <ArrowLeft size={36} />
+        </button>
+
+        <button
+          type="button"
+          data-carousel-next
+          data-carousel-target="testimonial-track"
+          class="size-16 rounded-full bg-dark text-white flex cursor-pointer items-center justify-center hover:bg-dark/90 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+          aria-label="Testimonio siguiente"
+        >
+          <ArrowRight size={36} />
+        </button>
+      </nav>
+    </header>
+
+    <div
+      id="testimonial-track"
+      class="testimonial-track flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+      aria-label="Testimonios de pacientes"
+      data-animate-stagger
+    >
+      {
+        testimonials.map((testimonial) => (
+          <article
+            class="testimonial-card aspect-3/3 bg-white rounded-3xl p-7 shadow-sm md:p-8 flex flex-col shrink-0 snap-start basis-full sm:basis-[calc((100%-1rem)/2)] lg:basis-[calc((100%-2rem)/3)]"
+            itemscope
+            itemtype="https://schema.org/Review"
+            data-animate-item
+          >
+            <Image
+              src={testimonial.avatar}
+              alt={`Retrato de ${testimonial.name}, paciente satisfecho`}
+              class="size-12 md:size-20 rounded-full bg-gray-200 mb-12 object-cover"
+              width={96}
+              height={96}
+              loading="lazy"
+              decoding="async"
+            />
+
+            <h3 class="text-base md:text-xl font-semibold mb-6" itemprop="name">
+              {testimonial.title}
+            </h3>
+
+            <p
+              class="text-sm md:text-2xl text-neutral-600 mb-6 flex-1"
+              itemprop="reviewBody"
+            >
+              "{testimonial.content}"
+            </p>
+
+            <div class="flex items-center justify-between">
+              <cite
+                class="text-sm md:text-base font-semibold not-italic"
+                itemprop="author"
+              >
+                {testimonial.name}
+              </cite>
+
+              <div
+                class="flex gap-0.5 text-yellow-500"
+                aria-label="5 de 5 estrellas"
+                itemprop="reviewRating"
+                itemscope
+                itemtype="https://schema.org/Rating"
+              >
+                <meta itemprop="ratingValue" content="5" />
+                <meta itemprop="bestRating" content="5" />
+                {Array.from({ length: 5 }).map(() => (
+                  <Star size={16} nonScalingStroke stroke-width={1.5} />
+                ))}
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

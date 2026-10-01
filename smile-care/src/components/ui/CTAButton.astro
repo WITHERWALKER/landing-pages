@@ -1,0 +1,31 @@
+---
+import ArrowIcon from "@/components/ui/ArrowIcon.astro";
+
+interface Props {
+  href: string;
+  variant?: "light" | "dark";
+  className?: string;
+}
+
+const { href, variant = "dark", className = "" } = Astro.props;
+
+const variantClass =
+  variant === "light"
+    ? "bg-white text-dark hover:bg-white/90"
+    : "bg-dark text-white hover:bg-dark/90";
+
+const sizeClass = "text-sm px-6 py-3";
+---
+
+<a
+  href={href}
+  class:list={[
+    "inline-flex items-center gap-2 rounded-full font-medium transition-colors [&_svg]:transition-transform [&_svg]:duration-300 hover:[&_svg]:translate-x-1",
+    variantClass,
+    sizeClass,
+    className,
+  ]}
+>
+  <slot />
+  <ArrowIcon size={16} />
+</a>

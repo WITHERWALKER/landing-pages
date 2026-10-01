@@ -1,0 +1,88 @@
+---
+import Button from "./Button.astro";
+---
+
+<section class="bg-bg">
+  <div class="container-page flex flex-col">
+    <header class="mt-16 max-w-337.5">
+      <h1 class="text-9xl text-primary tracking-tighter">
+        Revel your natural glow with pure skincare blend.
+      </h1>
+    </header>
+
+    <div class="flex mt-10">
+      <div class="flex flex-col gap-10 flex-1">
+        <p class="text-black text-xl text-balance">
+          Pure botanical ingredients crafted to give your skin long-lasting
+          moisture, a healthy glow, and visible improvement within days.
+        </p>
+
+        <footer class="flex gap-3">
+          <Button> Shop Now </Button>
+
+          <Button variant="outline" withIcon={false}> Explore More </Button>
+        </footer>
+      </div>
+
+      <aside class="flex flex-col gap-4 flex-1 items-end justify-end">
+        <div class="flex flex-col gap-3 w-fit">
+          <h3 class="text-3xl text-primary -ml-4">Trusted by</h3>
+
+          <div class="flex">
+            <img
+              src="https://plus.unsplash.com/premium_photo-1689568126014-06fea9d5d341?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHJhbmRvbSUyMHBlb3BsZXxlbnwwfHwwfHx8MA%3D%3D"
+              alt="user profile picture"
+            />
+
+            <img
+              src="https://img.freepik.com/foto-gratis/personas-estilo-vida-emociones-sentimientos-linda-mujer-estudiante-positiva-piel-oscura-ropa-casual-elegantes-lentes-redondos-sonriendo-felizmente-sintiendose-emocionada-primer-dia-universidad_273609-1259.jpg?semt=ais_hybrid&w=740&q=80"
+              alt="user profile picture"
+            />
+
+            <img
+              src="https://img.freepik.com/foto-gratis/chico-elegante-gafas-redondas_273609-10202.jpg?semt=ais_user_personalization&w=740&q=80"
+              alt="user profile picture"
+            />
+
+            <span class="flex justify-center items-center bg-primary text-bg">
+              40K+
+            </span>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="grid grid-cols-3 my-16 gap-4 overflow-hidden">
+      <img
+        src="https://www.weleda.es/cdn-cgi/image/width=1792%2Cq=80%2Cf=auto%2Csharpen=0.7%2Cdpr=2/binaries/_cb_1646139798470/headerSevenByThree/content/gallery/global/headers/homepage/hd_bodylotion.jpeg"
+        alt=""
+        class="col-span-2"
+      />
+
+      <img
+        src="https://www.primor.eu/blog/wp-content/uploads/2023/03/CREMAS-ANTIOXIDANTES.jpg"
+        alt=""
+        class="col-span-1"
+      />
+    </footer>
+  </div>
+</section>
+
+<style>
+  aside img,
+  span {
+    width: 4rem;
+    height: 4rem;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #ffffff;
+    margin-left: -1rem;
+  }
+
+  footer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+</style>

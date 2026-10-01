@@ -1,0 +1,84 @@
+---
+import { Quote } from "@lucide/astro";
+import Button from "./Button.astro";
+
+const reviews: {
+  user: string;
+  occupation: string;
+  review?: string;
+  ranking: string;
+}[] = [
+  {
+    user: "Metro Boomin",
+    occupation: "Producer",
+    ranking: "5.0",
+  },
+  {
+    user: "Kanye West",
+    occupation: "Producer",
+    ranking: "4.7",
+  },
+  {
+    user: "Abel Tesfaye",
+    occupation: "Producer, Singer",
+    ranking: "5.0",
+  },
+  {
+    user: "Elizabeth Grant",
+    occupation: "Singer",
+    ranking: "5.0",
+  },
+  {
+    user: "Raye",
+    occupation: "Singer",
+    ranking: "4.9",
+  },
+];
+---
+
+<section class="bg-bg">
+  <div class="container-page py-24 text-primary">
+    <header class="flex justify-between items-center">
+      <h2 class="text-5xl font-medium">What Customers Are Saying</h2>
+      <Button withIcon={false}> View All Reviews </Button>
+    </header>
+
+    <div
+      class="grid grid-cols-3 grid-rows-2 gap-8 pt-16 items-center justify-items-center"
+    >
+      {
+        reviews.map((item) => (
+          <article class="flex flex-col rounded-2xl p-10 w-fit size-96 bg-white">
+            <blockquote class="flex flex-col gap-6 flex-1">
+              <span>
+                <Quote size={48} />
+              </span>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. At quod
+              a illo impedit. Soluta, nesciunt ipsam harum maiores rem ullam?
+              Lorem ipsum dolor sit amet. Lorem ipsum dolor sit, amet
+              consectetur adipisicing elit.
+            </blockquote>
+
+            <footer class="grid grid-cols-2 items-center text-center pt-6 border-t-2 border-bg">
+              <div class="flex flex-col border-r-2 border-bg ">
+                <cite class="text-xl font-medium">{item.user}</cite>
+                <span class="text-base">{item.occupation}</span>
+              </div>
+
+              <div>
+                <p class="text-lg">Grade</p>
+                <span class="text-xl font-medium">{item.ranking}&starf;</span>
+              </div>
+            </footer>
+          </article>
+        ))
+      }
+
+      <img
+        src="https://media.istockphoto.com/id/1462119292/es/foto/feliz-con-su-rutina-de-cuidado-de-la-piel-una-mujer-de-unos-20-a%C3%B1os-se-aplica-crema-de-belleza.jpg?s=612x612&w=0&k=20&c=ikcYc9_AP-CPK0qVCAVdEX5VypMp2KtXsv0eU38PD9g="
+        alt=""
+        class="col-start-2 row-start-2 w-fit size-96 rounded-2xl"
+      />
+    </div>
+  </div>
+</section>

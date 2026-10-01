@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #0b2c13;
+    --color-bg: #eff4e9;
+    --color-black: #0a1912;
+}
+
+@layer components {
+    .container-page {
+        @apply max-w-420 mx-auto;
+    }
+}

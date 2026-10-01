@@ -1,0 +1,163 @@
+---
+import CTAButton from "@/components/ui/CTAButton.astro";
+import { Image } from "astro:assets";
+import { servicesContentVideo } from "@/data/site";
+import { ArrowRight, Sparkle } from "@lucide/astro";
+---
+
+<section
+  id="services"
+  class="py-16 md:py-24 bg-white rounded-t-[3rem]"
+  aria-labelledby="services-heading"
+>
+  <div class="mx-auto px-6 md:px-10 sm:max-w-400">
+    <header
+      class="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6"
+    >
+      <h2
+        id="services-heading"
+        class="text-3xl md:text-5xl font-bold leading-tight tracking-tight text-balance"
+        data-animate="fade-up"
+      >
+        Todo lo que Necesitas <br /> para tu Salud Dental
+      </h2>
+
+      <div class="" data-animate="fade-up">
+        <p
+          class="text-base md:text-lg text-neutral-600 max-w-md text-pretty ml-auto leading-relaxed"
+        >
+          Ofrecemos una amplia selección de servicios profesionales diseñados
+          para mantener tu sonrisa saludable, funcional y hermosa.
+        </p>
+
+        <CTAButton href="#services" className="mt-3 ml-auto">
+          Reservar Cita
+        </CTAButton>
+      </div>
+    </header>
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 items-stretch"
+      data-animate-stagger
+    >
+      <div
+        class="md:col-span-2 lg:col-span-2 flex gap-2 md:gap-3 items-stretch"
+        data-animate-item
+      >
+        <article
+          class="flex-1 min-w-0 min-h-85 md:min-h-95 rounded-2xl p-8 md:p-10 relative overflow-hidden bg-light-green flex flex-col shadow-sm transition-[translate,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-lg"
+        >
+          <Sparkle size={72} nonScalingStroke class="text-[#c9d6bb]" />
+
+          <div class="flex flex-col mt-auto">
+            <h3 class="text-2xl font-semibold mb-2">
+              Protección contra caries
+            </h3>
+
+            <p
+              class="text-base text-neutral-600 text-pretty leading-relaxed mb-4 max-w-md"
+            >
+              Detectamos y tratamos las caries a tiempo, con técnicas suaves que
+              protegen tu esmalte y tu tranquilidad.
+            </p>
+
+            <a
+              href="#"
+              class="relative mt-auto w-fit inline-flex items-center gap-1 text-base font-medium text-dark after:absolute after:-bottom-0.75 after:left-0 after:h-[1.5px] after:w-full after:bg-current [&_svg]:transition-transform [&_svg]:duration-300 hover:[&_svg]:translate-x-1"
+              aria-label="Más información sobre Protección contra caries"
+            >
+              Leer más
+              <ArrowRight />
+            </a>
+          </div>
+        </article>
+
+        <div
+          class="shrink-0 w-7 md:w-12 flex items-stretch justify-center"
+          aria-hidden="true"
+        >
+          <div
+            class="flex flex-col items-center justify-center gap-3 py-1 text-dark"
+          >
+            <span
+              class="[writing-mode:vertical-rl] rotate-180 text-sm font-semibold uppercase tracking-[0.25em]"
+            >
+              Nuestros Servicios
+            </span>
+
+            <span aria-hidden="true" class="block w-px h-8 bg-current"></span>
+          </div>
+        </div>
+      </div>
+
+      <article
+        data-animate-item
+        class="h-full min-h-85 md:min-h-95 rounded-2xl p-8 md:p-10 relative overflow-hidden bg-soft-purple flex flex-col shadow-sm transition-[translate,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-lg"
+      >
+        <Sparkle size={72} nonScalingStroke class="text-[#dcc3ee]" />
+
+        <div class="flex flex-col mt-auto">
+          <h3 class="text-2xl font-semibold mb-2">Endodoncia</h3>
+
+          <p
+            class="text-base text-neutral-600 text-pretty leading-relaxed mb-4 max-w-md"
+          >
+            Salvamos tu diente sin dolor, con anestesia efectiva y tecnología
+            precisa. Saldrás sonriendo, te lo prometemos.
+          </p>
+
+          <a
+            href="#"
+            class="relative mt-auto w-fit inline-flex items-center gap-1 text-base font-medium text-dark after:absolute after:-bottom-0.75 after:left-0 after:h-[1.5px] after:w-full after:bg-current [&_svg]:transition-transform [&_svg]:duration-300 hover:[&_svg]:translate-x-1"
+            aria-label="Más información sobre Endodoncia"
+          >
+            Leer más
+            <ArrowRight />
+          </a>
+        </div>
+      </article>
+
+      <article
+        data-animate-item
+        class="h-full min-h-85 md:min-h-95 rounded-2xl p-8 md:p-10 relative overflow-hidden bg-soft-blue flex flex-col shadow-sm transition-[translate,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-lg"
+      >
+        <Sparkle size={72} nonScalingStroke class="text-[#b1d8f2]" />
+
+        <div class="flex flex-col mt-auto">
+          <h3 class="text-2xl font-semibold mb-2">Cirugía oral</h3>
+
+          <p
+            class="text-base text-neutral-600 text-pretty leading-relaxed mb-4 max-w-md"
+          >
+            Extracciones y cirugías planificadas al detalle, con una
+            recuperación acompañada paso a paso.
+          </p>
+
+          <a
+            href="#"
+            class="relative mt-auto w-fit inline-flex items-center gap-1 text-base font-medium text-dark after:absolute after:-bottom-0.75 after:left-0 after:h-[1.5px] after:w-full after:bg-current [&_svg]:transition-transform [&_svg]:duration-300 hover:[&_svg]:translate-x-1"
+            aria-label="Más información sobre Cirugía oral"
+          >
+            Leer más
+            <ArrowRight />
+          </a>
+        </div>
+      </article>
+
+      <figure
+        data-animate-item
+        class="md:col-span-2 lg:col-span-2 relative h-full min-h-85 md:min-h-95 rounded-2xl overflow-hidden shadow-sm"
+      >
+        <Image
+          src={servicesContentVideo.src}
+          alt={servicesContentVideo.alt}
+          class="absolute inset-0 w-full h-full object-cover"
+          width={800}
+          height={450}
+          loading="lazy"
+          decoding="async"
+        />
+      </figure>
+    </div>
+  </div>
+</section>

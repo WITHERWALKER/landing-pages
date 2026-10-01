@@ -1,0 +1,85 @@
+---
+import { insights } from "@/data/site";
+import { Image } from "astro:assets";
+---
+
+<section
+  id="blog"
+  class="py-16 md:py-24 bg-cream"
+  aria-labelledby="blog-heading"
+>
+  <div class="mx-auto px-6 md:px-10 sm:max-w-400">
+    <header class="flex mb-10">
+      <h2
+        id="blog-heading"
+        class="text-3xl md:text-5xl font-bold tracking-tight text-balance mb-10"
+        data-animate="fade-up"
+      >
+        Consejos para tu sonrisa
+      </h2>
+    </header>
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-3 gap-6"
+      aria-label="Artículos del blog"
+      data-animate-stagger
+    >
+      {
+        insights.map((insight) => (
+          <article
+            class:list={[
+              "rounded-2xl  shadow-sm overflow-hidden aspect-4/5 transition-[translate,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-lg ",
+              insight.cardTone,
+              insight.image ? "relative" : "",
+            ]}
+            data-animate-item
+          >
+            {insight.image && (
+              <Image
+                src={insight.image.src}
+                alt={insight.image.alt}
+                class="absolute inset-0 h-full shadow-sm w-full object-cover rounded-2xl blur-xs scale-110 brightness-75 hover:shadow-lg hover:-translate-y-1"
+                width={400}
+                height={500}
+                loading="lazy"
+                decoding="async"
+              />
+            )}
+
+            <div class="relative flex flex-col p-8 h-full items-center justify-between">
+              <time
+                datetime={insight.dateIso}
+                class:list={[
+                  "inline-block items-center text-sm md:text-base px-5 py-2 border rounded-full w-fit",
+                  insight.image
+                    ? " text-neutral-200 border-neutral-200"
+                    : " text-neutral-600 border-neutral-600",
+                ]}
+              >
+                {insight.dateLabel}
+              </time>
+
+              <h3
+                class:list={[
+                  "text-3xl md:text-4xl text-center font-semibold leading-tight",
+                  insight.image ? "text-white" : "",
+                ]}
+              >
+                {insight.title}
+              </h3>
+
+              <p
+                class:list={[
+                  "text-lg font-medium leading-relaxed text-center",
+                  insight.image ? "text-neutral-200" : "text-neutral-600",
+                ]}
+              >
+                {insight.excerpt}
+              </p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

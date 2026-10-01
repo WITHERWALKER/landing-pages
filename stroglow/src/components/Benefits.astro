@@ -1,0 +1,66 @@
+---
+import { Hexagon, Droplets, Shield, Sparkles } from "@lucide/astro";
+
+const iconMap = {
+  Hexagon,
+  Droplets,
+  Shield,
+  Sparkles,
+};
+
+const benefits: {
+  title: string;
+  description: string;
+  icon: keyof typeof iconMap;
+}[] = [
+  {
+    title: "Brightens Tone",
+    description: "Revives dull skin a healthy, natural glow every day.",
+    icon: "Hexagon",
+  },
+  {
+    title: "Deeply Hydrates",
+    description: "Keeps skin soft, moisturized, and nourished all day long.",
+    icon: "Droplets",
+  },
+  {
+    title: "Improves Texture",
+    description: "Smooths texture and refines skin for a softer appearance.",
+    icon: "Sparkles",
+  },
+  {
+    title: "Protects Skin Barrier",
+    description: "Strengthens skin to prevent dryness and sensitivity.",
+    icon: "Shield",
+  },
+];
+---
+
+<section class="container-page py-24 flex gap-16">
+  <div class="flex-1">
+    <img
+      src="https://belletzamedicaspa.com/wp-content/uploads/2019/06/inicio-spa.jpg"
+      alt=""
+      class="w-full h-full max-h-132 object-cover rounded-2xl"
+    />
+  </div>
+
+  <section class="grid grid-cols-2 gap-4 flex-1">
+    {
+      benefits.map((item) => {
+        const Icon = iconMap[item.icon];
+
+        return (
+          <article class="p-6 rounded-2xl bg-bg flex flex-col gap-3 justify-between">
+            <Icon class="text-primary size-12 p-1 bg-white rounded-full" />
+
+            <div class="flex flex-col gap-4 text-primary">
+              <h3 class="text-2xl font-medium ">{item.title}</h3>
+              <p class="text-xl">{item.description}</p>
+            </div>
+          </article>
+        );
+      })
+    }
+  </section>
+</section>

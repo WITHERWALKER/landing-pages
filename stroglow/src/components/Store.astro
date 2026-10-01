@@ -1,0 +1,111 @@
+---
+import Button from "./Button.astro";
+
+const products: {
+  title: string;
+  price: number;
+  ranking: number;
+  stock: boolean;
+  imgUrl: string;
+}[] = [
+  {
+    title: "Salicylic Acid Cleanser",
+    price: 46,
+    ranking: 4.5,
+    stock: true,
+    imgUrl:
+      "https://img.freepik.com/foto-gratis/planta-recipiente-crema-angulo-alto_23-2148899420.jpg?semt=ais_hybrid&w=740&q=80",
+  },
+  {
+    title: "Laikou California Vitamin C",
+    price: 48,
+    ranking: 4.5,
+    stock: false,
+    imgUrl:
+      "https://img.freepik.com/foto-gratis/planta-recipiente-crema-angulo-alto_23-2148899420.jpg?semt=ais_hybrid&w=740&q=80",
+  },
+  {
+    title: "Laikou Japan Sakura Eye",
+    price: 46,
+    ranking: 4.5,
+    stock: true,
+    imgUrl:
+      "https://img.freepik.com/foto-gratis/planta-recipiente-crema-angulo-alto_23-2148899420.jpg?semt=ais_hybrid&w=740&q=80",
+  },
+  {
+    title: "Anua Acid Cleanser Bambu",
+    price: 46,
+    ranking: 4.5,
+    stock: true,
+    imgUrl:
+      "https://img.freepik.com/foto-gratis/planta-recipiente-crema-angulo-alto_23-2148899420.jpg?semt=ais_hybrid&w=740&q=80",
+  },
+  {
+    title: "Acid Vitamin E Cleanser Acid",
+    price: 46,
+    ranking: 4.5,
+    stock: true,
+    imgUrl:
+      "https://img.freepik.com/foto-gratis/planta-recipiente-crema-angulo-alto_23-2148899420.jpg?semt=ais_hybrid&w=740&q=80",
+  },
+];
+---
+
+<section class="container-page py-10 text-primary">
+  <header class="flex justify-between items-center py-14">
+    <h2 class="text-5xl font-medium">Our Best Products</h2>
+    <p class="max-w-96 text-balance">
+      Pure botanical ingredients crafted to give your skin long-lasting a
+      healthy glow.
+    </p>
+  </header>
+
+  <div>
+    <nav class="flex justify-between items-center py-8 border-b-2 border-bg">
+      <div class="flex gap-2">
+        <Button> Popular </Button>
+
+        <Button variant="secondary" withIcon={false}> Body </Button>
+        <Button variant="secondary" withIcon={false}> Face </Button>
+        <Button variant="secondary" withIcon={false}> Hair & Scalp </Button>
+        <Button variant="secondary" withIcon={false}> Eye & Lip </Button>
+      </div>
+
+      <Button withIcon={false} variant="outline" as="a" href="#">
+        View All Products
+      </Button>
+    </nav>
+
+    <div class="flex gap-6 py-8 overflow-x-auto">
+      {
+        products.map((item) => (
+          <article class="flex flex-col min-w-96">
+            <div class="relative">
+              <img
+                src={item.imgUrl}
+                alt={`Product ${item.title}`}
+                class="rounded-2xl object-cover aspect-square w-full"
+              />
+
+              <span class="absolute top-4 left-4 px-4 py-0.5 bg-white rounded-full">
+                <span class={`${item.stock ? "text-black" : "text-red-500"}`}>
+                  &bullet;
+                </span>
+                {item.stock ? "In Stock" : "Out Of Stock"}
+              </span>
+            </div>
+
+            <h3 class="text-xl font-medium my-2">{item.title}</h3>
+
+            <p class="flex justify-between mb-4">
+              <span>Price ${item.price}</span>
+              <span>{item.ranking}&starf;</span>
+            </p>
+
+            <Button withIcon={false}>Shop Now</Button>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

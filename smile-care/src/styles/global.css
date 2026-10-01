@@ -1,0 +1,17 @@
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+@import "@fontsource/inter/600.css";
+@import "@fontsource/inter/700.css";
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #faf7f2;
+  --color-light-green: #d4e4c2;
+  --color-soft-purple: #e8d5f5;
+  --color-soft-blue: #b8e0f7;
+  --color-dark: #1a1a1a;
+  --color-muted: #6b7280;
+  --color-soft-beige: #f5efe6;
+  --color-soft-pink: #f9e8d6;
+  --font-sans: "Inter", system-ui, sans-serif;
+}

@@ -1,0 +1,121 @@
+---
+import CTAButton from "@/components/ui/CTAButton.astro";
+import SectionEyebrow from "@/components/ui/SectionEyebrow.astro";
+import { Image } from "astro:assets";
+import consultaPersonalizada from "@/assets/images/consulta-personalizada.png";
+import examenDental from "@/assets/images/examen-dental.png";
+import diagnosticoModerno from "@/assets/images/diagnostico-moderno.png";
+---
+
+<section
+  id="consultations"
+  class="py-16 md:py-24 bg-cream"
+  aria-labelledby="consultations-heading"
+>
+  <div class="mx-auto px-6 md:px-10 sm:max-w-400">
+    <div class="flex flex-col md:flex-row items-stretch gap-8 md:gap-10">
+      <aside class="flex flex-col w-full md:w-1/4" data-animate="fade-up">
+        <div class="flex flex-col gap-4">
+          <SectionEyebrow label="Cuidado asequible" />
+
+          <h2
+            id="consultations-heading"
+            class="text-3xl md:text-5xl font-bold leading-tight tracking-tight text-balance"
+            data-animate="fade-up"
+          >
+            Consultas médicas <br /> de confianza
+          </h2>
+        </div>
+
+        <p
+          class="text-base text-neutral-600 my-auto font-medium leading-relaxed"
+        >
+          Nuestro equipo evalúa tus resultados con atención para ofrecerte
+          información práctica que mejore tu salud y tu longevidad.
+        </p>
+      </aside>
+
+      <div
+        class="w-full md:w-3/4 grid grid-cols-1 gap-4 sm:grid-cols-5 sm:grid-rows-6 sm:gap-2 md:gap-3 sm:min-h-165 lg:min-h-195"
+        data-animate-stagger
+      >
+        <figure
+          data-animate-item
+          class="group relative min-h-56 overflow-hidden rounded-2xl sm:col-span-2 sm:row-span-3 sm:min-h-0"
+        >
+          <Image
+            src={consultaPersonalizada}
+            alt="Consulta de odontología con atención personalizada al paciente"
+            class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-102"
+            widths={[480, 800]}
+            sizes="(min-width: 640px) 40vw, 100vw"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+
+        <article
+          data-animate-item
+          class="flex h-full flex-col justify-center rounded-2xl bg-white p-6 sm:col-span-3 sm:row-span-2 sm:col-start-3 md:p-8"
+        >
+          <p
+            class="text-xs md:text-lg text-pretty font-medium text-neutral-600 leading-relaxed mb-4"
+          >
+            Toma el control de tu salud con una evaluación integral como ninguna
+            otra. Utilizamos las últimas innovaciones médicas, incluida la
+            resonancia magnética de última generación, evaluaciones
+            cardiovasculares y neurocognitivas, detección precoz del cáncer y
+            pruebas genéticas.
+          </p>
+
+          <CTAButton href="#services" className="self-start">
+            Reservar Cita
+          </CTAButton>
+        </article>
+
+        <article
+          data-animate-item
+          class="flex flex-col gap-2 h-fit border border-neutral-200 justify-center rounded-2xl bg-white p-5 sm:row-span-2 sm:col-start-1 sm:row-start-4"
+        >
+          <data value="98" class="text-2xl md:text-4xl font-bold text-dark">
+            98%
+          </data>
+
+          <p class="text-sm text-neutral-600 mt-2">
+            Satisfacción de nuestros pacientes con el servicio
+          </p>
+        </article>
+
+        <figure
+          data-animate-item
+          class="group relative min-h-56 overflow-hidden rounded-2xl sm:col-span-3 sm:row-span-3 sm:col-start-2 sm:row-start-4 sm:min-h-0"
+        >
+          <Image
+            src={examenDental}
+            alt="Profesional dental examinando los dientes de un paciente"
+            class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-102"
+            widths={[480, 800]}
+            sizes="(min-width: 640px) 45vw, 100vw"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+
+        <figure
+          data-animate-item
+          class="group relative min-h-56 overflow-hidden rounded-2xl sm:col-span-1 sm:row-span-3 sm:col-start-5 sm:row-start-3 sm:min-h-0"
+        >
+          <Image
+            src={diagnosticoModerno}
+            alt="Examen dental detallado con herramientas modernas de diagnóstico"
+            class="absolute inset-0 h-full w-full object-cover aspect-9/16 transition-transform duration-500 group-hover:scale-102"
+            widths={[320, 640]}
+            sizes="(min-width: 640px) 20vw, 100vw"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
