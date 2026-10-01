@@ -22,3 +22,5 @@ bun.lockb
 Thumbs.db
 .idea/
 *.local
+
+.vscode
