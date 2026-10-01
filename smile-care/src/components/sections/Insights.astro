@@ -5,10 +5,10 @@ import { Image } from "astro:assets";
 
 <section
   id="blog"
-  class="py-16 md:py-24 bg-cream"
+  class="py-16 md:py-24 bg-cream overflow-x-clip"
   aria-labelledby="blog-heading"
 >
-  <div class="mx-auto px-6 md:px-10 sm:max-w-400">
+  <div class="mx-auto px-6 md:px-10 sm:max-w-400 w-full min-w-0">
     <header class="flex mb-10">
       <h2
         id="blog-heading"
@@ -20,7 +20,7 @@ import { Image } from "astro:assets";
     </header>
 
     <div
-      class="grid grid-cols-1 md:grid-cols-3 gap-6"
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 min-w-0 w-full sm:[&>*:last-child]:col-span-2 lg:[&>*:last-child]:col-span-1 sm:[&>*:last-child]:aspect-16/10 lg:[&>*:last-child]:aspect-4/5"
       aria-label="Artículos del blog"
       data-animate-stagger
     >
@@ -28,7 +28,7 @@ import { Image } from "astro:assets";
         insights.map((insight) => (
           <article
             class:list={[
-              "rounded-2xl  shadow-sm overflow-hidden aspect-4/5 transition-[translate,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-lg ",
+              "rounded-2xl  shadow-sm overflow-hidden aspect-4/5 transition-[translate,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-lg min-w-0 max-w-full ",
               insight.cardTone,
               insight.image ? "relative" : "",
             ]}
@@ -46,11 +46,11 @@ import { Image } from "astro:assets";
               />
             )}
 
-            <div class="relative flex flex-col p-8 h-full items-center justify-between">
+            <div class="relative flex flex-col p-8 h-full items-center justify-between gap-4 min-w-0">
               <time
                 datetime={insight.dateIso}
                 class:list={[
-                  "inline-block items-center text-sm md:text-base px-5 py-2 border rounded-full w-fit",
+                  "inline-block items-center text-sm md:text-base px-5 py-2 border rounded-full w-fit max-w-full",
                   insight.image
                     ? " text-neutral-200 border-neutral-200"
                     : " text-neutral-600 border-neutral-600",
@@ -61,7 +61,7 @@ import { Image } from "astro:assets";
 
               <h3
                 class:list={[
-                  "text-3xl md:text-4xl text-center font-semibold leading-tight",
+                  "text-3xl md:text-4xl text-center font-semibold leading-tight wrap-break-word max-w-full",
                   insight.image ? "text-white" : "",
                 ]}
               >
@@ -70,7 +70,7 @@ import { Image } from "astro:assets";
 
               <p
                 class:list={[
-                  "text-lg font-medium leading-relaxed text-center",
+                  "text-lg font-medium leading-relaxed text-center wrap-break-word max-w-full",
                   insight.image ? "text-neutral-200" : "text-neutral-600",
                 ]}
               >

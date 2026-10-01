@@ -5,12 +5,12 @@ import { heroContent } from "@/data/site";
 import Navbar from "@/components/layout/Navbar.astro";
 ---
 
-<header class="m-4 relative">
+<header class="m-4 relative min-w-0">
   <Navbar />
 
   <section
     id="hero"
-    class="relative min-h-screen flex items-center overflow-hidden"
+    class="relative min-h-screen flex items-center overflow-hidden w-full min-w-0"
   >
     <div class="absolute inset-0 rounded-4xl">
       <Image
@@ -31,15 +31,17 @@ import Navbar from "@/components/layout/Navbar.astro";
     </div>
 
     <div
-      class="relative z-10 mx-auto px-6 md:px-10 sm:max-w-400 w-full pt-24"
+      class="relative z-10 mx-auto px-6 md:px-10 sm:max-w-400 w-full pt-24 pb-16 md:pb-0 min-w-0"
       data-hero-reveal
     >
-      <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4">
+      <h1
+        class="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 wrap-break-word max-w-full"
+      >
         Cuidado Dental <br /> Sin Estrés
       </h1>
 
       <p
-        class="text-pretty text-neutral-400 text-sm md:text-base mb-8 leading-relaxed"
+        class="text-pretty text-neutral-400 text-sm md:text-base mb-8 leading-relaxed wrap-break-word"
       >
         Ya sea una revisión de rutina o una emergencia dental,<br
           class="hidden md:block"

@@ -9,35 +9,38 @@ import sonrisaCardImg from "@/assets/images/sonrisa-sana.png";
 
 <section
   id="works"
-  class="py-16 md:py-24 bg-light-green mx-4 rounded-4xl"
+  class="py-16 md:py-24 bg-light-green mx-4 rounded-4xl overflow-x-clip"
   aria-labelledby="works-heading"
 >
-  <div class="mx-auto px-6 md:px-10 sm:max-w-400">
+  <div class="mx-auto px-6 md:px-10 sm:max-w-400 w-full min-w-0">
     <header
-      class="flex flex-col md:flex-row md:items-start md:justify-between mt-16 mb-32 gap-6"
+      class="flex flex-col md:flex-row md:items-start md:justify-between mt-16 mb-32 gap-6 min-w-0"
     >
       <div
         data-animate="fade-up"
-        class="flex flex-col items-center justify-center gap-3 py-1"
+        class="flex flex-col items-center justify-center gap-3 py-1 min-w-0 shrink-0"
       >
         <SectionEyebrow label="Casos reales" />
       </div>
 
       <h2
         id="works-heading"
-        class="text-3xl md:text-5xl font-semibold tracking-tight text-balance text-right"
+        class="text-3xl md:text-5xl font-semibold tracking-tight text-balance text-center md:text-right wrap-break-word max-w-full min-w-0"
         data-animate="fade-up"
       >
         Resultados Reales de <br /> Nuestros Tratamientos
       </h2>
     </header>
 
-    <div class="flex flex-col md:flex-row gap-8 md:gap-12">
+    <div class="flex flex-col md:flex-row gap-8 md:gap-12 min-w-0 w-full">
       <div
-        class="w-full grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6"
+        class="w-full grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 min-w-0"
         data-animate-stagger
       >
-        <article data-animate="fade-up" class="flex flex-col justify-between">
+        <article
+          data-animate="fade-up"
+          class="flex flex-col justify-start min-w-0"
+        >
           <div>
             <p
               class="text-base md:text-lg max-w-110 text-pretty font-medium text-neutral-600 leading-relaxed mb-6"
@@ -50,15 +53,15 @@ import sonrisaCardImg from "@/assets/images/sonrisa-sana.png";
           </div>
 
           <figure
-            class="flex items-center gap-3 mt-8"
+            class="flex items-center gap-3 mt-8 flex-wrap gap-y-4 max-w-full"
             aria-label="Pacientes felices"
           >
-            <div class="flex -space-x-10">
+            <div class="flex -space-x-3 max-w-full min-w-0">
               {
                 worksContent.members.map((member) => (
                   <span
                     class:list={[
-                      "size-28 rounded-full border-2 border-light-green flex items-center justify-center text-xs font-bold text-dark",
+                      "size-12 rounded-full border-2 border-light-green flex items-center justify-center text-xs font-bold text-dark shrink-0",
                       member.tone,
                     ]}
                   >
@@ -68,7 +71,7 @@ import sonrisaCardImg from "@/assets/images/sonrisa-sana.png";
               }
             </div>
 
-            <figcaption>
+            <figcaption class="min-w-0">
               <p class="text-xl font-semibold text-dark">10k+ Pacientes</p>
               <p class="text-xl text-dark/60">Felices</p>
             </figcaption>
@@ -77,7 +80,7 @@ import sonrisaCardImg from "@/assets/images/sonrisa-sana.png";
 
         <figure
           data-animate-item
-          class="group relative overflow-hidden rounded-2xl aspect-16/10 sm:aspect-3/4"
+          class="group relative overflow-hidden rounded-2xl aspect-16/10 sm:aspect-3/4 min-w-0 w-full"
         >
           <Image
             src={alineacionImg}
@@ -111,7 +114,7 @@ import sonrisaCardImg from "@/assets/images/sonrisa-sana.png";
 
         <figure
           data-animate-item
-          class="group relative overflow-hidden rounded-2xl aspect-16/10 sm:aspect-3/4"
+          class="group relative overflow-hidden rounded-2xl aspect-16/10 sm:aspect-3/4 min-w-0 w-full"
         >
           <Image
             src={sonrisaCardImg}

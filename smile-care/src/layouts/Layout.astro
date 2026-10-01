@@ -85,9 +85,8 @@ const locale = "es_ES";
       type="application/ld+json"
       set:html={JSON.stringify(structuredData.faq)}
     />
-
   </head>
-  <body class="font-sans bg-cream text-dark">
+  <body class="font-sans bg-cream text-dark overflow-x-clip antialiased">
     <slot />
     <script>
       import "@/scripts/app";

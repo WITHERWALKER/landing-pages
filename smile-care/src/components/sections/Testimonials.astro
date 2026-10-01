@@ -6,12 +6,12 @@ import { ArrowLeft, ArrowRight, Star } from "@lucide/astro";
 
 <section
   id="testimonials"
-  class="py-16 md:py-24 bg-soft-blue rounded-4xl mx-4"
+  class="py-16 md:py-24 bg-soft-blue rounded-4xl mx-4 overflow-x-clip"
   aria-labelledby="testimonials-heading"
 >
-  <div class="mx-auto px-6 md:px-10 sm:max-w-400">
+  <div class="mx-auto px-6 md:px-10 sm:max-w-400 w-full min-w-0">
     <header
-      class="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-4"
+      class="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-4 min-w-0"
     >
       <div data-animate="fade-up" class="flex flex-col gap-4">
         <h2
@@ -37,7 +37,7 @@ import { ArrowLeft, ArrowRight, Star } from "@lucide/astro";
           type="button"
           data-carousel-prev
           data-carousel-target="testimonial-track"
-          class="size-16 rounded-full bg-white flex cursor-pointer items-center justify-center hover:bg-white/80 transition-colors shadow-sm disabled:opacity-40 disabled:cursor-not-allowed"
+          class="size-16 rounded-full bg-white flex cursor-pointer items-center justify-center hover:bg-white/80 transition-colors shadow-sm disabled:opacity-40 disabled:cursor-not-allowed shrink-0"
           aria-label="Testimonio anterior"
         >
           <ArrowLeft size={36} />
@@ -47,7 +47,7 @@ import { ArrowLeft, ArrowRight, Star } from "@lucide/astro";
           type="button"
           data-carousel-next
           data-carousel-target="testimonial-track"
-          class="size-16 rounded-full bg-dark text-white flex cursor-pointer items-center justify-center hover:bg-dark/90 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+          class="size-16 rounded-full bg-dark text-white flex cursor-pointer items-center justify-center hover:bg-dark/90 transition-colors disabled:opacity-40 disabled:cursor-not-allowed shrink-0"
           aria-label="Testimonio siguiente"
         >
           <ArrowRight size={36} />
@@ -64,7 +64,7 @@ import { ArrowLeft, ArrowRight, Star } from "@lucide/astro";
       {
         testimonials.map((testimonial) => (
           <article
-            class="testimonial-card aspect-3/3 bg-white rounded-3xl p-7 shadow-sm md:p-8 flex flex-col shrink-0 snap-start basis-full sm:basis-[calc((100%-1rem)/2)] lg:basis-[calc((100%-2rem)/3)]"
+            class="testimonial-card aspect-3/3 bg-white rounded-3xl p-7 shadow-sm md:p-8 flex flex-col shrink-0 snap-start basis-full sm:basis-[calc((100%-1rem)/2)] lg:basis-[calc((100%-2rem)/3)] min-w-0 max-w-full"
             itemscope
             itemtype="https://schema.org/Review"
             data-animate-item
@@ -72,19 +72,22 @@ import { ArrowLeft, ArrowRight, Star } from "@lucide/astro";
             <Image
               src={testimonial.avatar}
               alt={`Retrato de ${testimonial.name}, paciente satisfecho`}
-              class="size-12 md:size-20 rounded-full bg-gray-200 mb-12 object-cover"
+              class="size-12 md:size-20 rounded-full bg-gray-200 mb-12 object-cover shrink-0"
               width={96}
               height={96}
               loading="lazy"
               decoding="async"
             />
 
-            <h3 class="text-base md:text-xl font-semibold mb-6" itemprop="name">
+            <h3
+              class="text-base md:text-xl font-semibold mb-6 wrap-break-word"
+              itemprop="name"
+            >
               {testimonial.title}
             </h3>
 
             <p
-              class="text-sm md:text-2xl text-neutral-600 mb-6 flex-1"
+              class="text-sm md:text-2xl text-neutral-600 mb-6 flex-1 wrap-break-word"
               itemprop="reviewBody"
             >
               "{testimonial.content}"
@@ -92,14 +95,14 @@ import { ArrowLeft, ArrowRight, Star } from "@lucide/astro";
 
             <div class="flex items-center justify-between">
               <cite
-                class="text-sm md:text-base font-semibold not-italic"
+                class="text-sm md:text-base font-semibold not-italic min-w-0"
                 itemprop="author"
               >
                 {testimonial.name}
               </cite>
 
               <div
-                class="flex gap-0.5 text-yellow-500"
+                class="flex gap-0.5 text-yellow-500 shrink-0"
                 aria-label="5 de 5 estrellas"
                 itemprop="reviewRating"
                 itemscope

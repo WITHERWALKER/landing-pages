@@ -7,13 +7,13 @@ import { aboutContent } from "@/data/site";
 
 <section
   id="about"
-  class="py-16 md:py-26 bg-cream"
+  class="py-16 md:py-26 bg-cream overflow-x-clip"
   aria-labelledby="about-heading"
 >
   <div
-    class="flex flex-col mx-auto px-6 md:px-10 sm:max-w-400 md:flex-row items-center gap-8 md:gap-12"
+    class="flex flex-col mx-auto px-6 md:px-10 sm:max-w-400 md:flex-row items-center gap-8 md:gap-12 w-full min-w-0"
   >
-    <figure class="w-full md:w-1/4" data-animate="fade-up">
+    <figure class="w-full md:w-1/4 min-w-0" data-animate="fade-up">
       <Image
         src={aboutContent.leftImage.src}
         alt={aboutContent.leftImage.alt}
@@ -25,18 +25,18 @@ import { aboutContent } from "@/data/site";
       />
     </figure>
 
-    <article class="w-full md:w-1/2 text-center" data-animate="fade-up">
+    <article class="w-full md:w-1/2 text-center min-w-0" data-animate="fade-up">
       <SectionEyebrow label="Sobre nosotros" className="justify-center" />
 
       <h2
         id="about-heading"
-        class="text-3xl md:text-5xl font-bold tracking-tight text-balance mt-2 mb-4"
+        class="text-3xl md:text-5xl font-bold tracking-tight text-balance mt-2 mb-4 wrap-break-word"
       >
         Una Forma de Ahorrar <br /> en tu Cuidado Dental
       </h2>
 
       <p
-        class="text-muted text-base md:text-lg leading-relaxed mb-6 max-w-xl text-pretty mx-auto"
+        class="text-muted text-base md:text-lg leading-relaxed mb-6 max-w-xl text-pretty mx-auto wrap-break-word"
       >
         Nuestro equipo de profesionales experimentados crea un ambiente cómodo y
         acogedor para cada paciente. Ofrecemos una amplia variedad de servicios
@@ -58,7 +58,10 @@ import { aboutContent } from "@/data/site";
       </figure>
     </article>
 
-    <aside class="w-full md:w-1/4 flex flex-col gap-6" data-animate="fade-up">
+    <aside
+      class="w-full md:w-1/4 flex flex-col gap-6 min-w-0"
+      data-animate="fade-up"
+    >
       <figure>
         <Image
           src={aboutContent.rightImage.src}

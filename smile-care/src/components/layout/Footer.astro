@@ -6,11 +6,11 @@ import { ArrowRight } from "@lucide/astro";
 <footer
   class="bg-black text-white min-h-[60dvh] rounded-4xl m-4 overflow-hidden relative"
 >
-  <div class="mx-auto px-6 sm:max-w-400 w-full pt-16 pb-[15vw]">
+  <div class="mx-auto px-6 sm:max-w-400 w-full pt-16 pb-[15vw] min-w-0">
     <section
-      class="flex flex-col md:flex-row md:items-start md:justify-between gap-10"
+      class="flex flex-col md:flex-row md:items-start md:justify-between gap-10 min-w-0 w-full"
     >
-      <aside class="w-full md:w-1/3" data-animate="fade-up">
+      <aside class="w-full md:w-1/3 min-w-0" data-animate="fade-up">
         <p
           class="text-3xl md:text-4xl font-semibold text-white leading-tight mb-2"
         >
@@ -35,7 +35,7 @@ import { ArrowRight } from "@lucide/astro";
             />
             <button
               type="submit"
-              class="text-white/60 hover:text-white transition-colors"
+              class="text-white/60 hover:text-white transition-colors shrink-0"
               aria-label="Suscribirme al boletín"
             >
               <ArrowRight />
@@ -45,7 +45,7 @@ import { ArrowRight } from "@lucide/astro";
       </aside>
 
       <div
-        class="flex flex-wrap gap-8 md:gap-20 lg:gap-24 text-sm md:text-base text-white/70 md:flex-1 md:justify-end"
+        class="flex flex-wrap gap-8 md:gap-20 lg:gap-24 text-sm md:text-base text-white/70 md:flex-1 md:justify-end min-w-0"
         data-animate-stagger
       >
         {
