@@ -32,7 +32,7 @@ Necesitas tener instalado:
 Descarga el repositorio:
 
 ```bash
-git clone https://github.com/TU_USUARIO/landing-pages.git
+git clone https://github.com/WITHERWALKER/landing-pages.git
 cd landing-pages
 ```
 
