@@ -1,5 +1,5 @@
 ---
-import ArrowIcon from "@/components/ui/ArrowIcon.astro";
+import { ArrowRight } from "@lucide/astro";
 
 interface Props {
   href: string;
@@ -20,12 +20,12 @@ const sizeClass = "text-sm px-6 py-3";
 <a
   href={href}
   class:list={[
-    "inline-flex items-center gap-2 rounded-full font-medium transition-colors [&_svg]:transition-transform [&_svg]:duration-300 hover:[&_svg]:translate-x-1",
+    "inline-flex items-center gap-2 rounded-full font-medium transition-colors [&_svg]:transition-transform [&_svg]:duration-300 hover:[&_svg]:translate-x-1 shrink-0 max-w-full [&_svg]:shrink-0",
     variantClass,
     sizeClass,
     className,
   ]}
 >
   <slot />
-  <ArrowIcon size={16} />
+  <ArrowRight />
 </a>
